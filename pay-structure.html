@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<title> NS Payroll & Personnel System </title>
+
+		<!--browser icon-->
+		<link 	rel = "icon"
+				href = "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💵</text></svg>" />
+
+		<meta charset = "UTF-8" />
+		<meta name = "viewport" content = "width=device-width, initial-scale=1.0" />
+		<meta name = "author" content = "Rebecca Chan" /> <!--date of creation; Mon, July 20, 2026-->
+
+		<!--custom CSS-->
+		<link rel = "stylesheet" href = "css/style.css" />
+
+		<!--font awesome link-->
+		<link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" />
+
+		<!--google fonts: spectral, public sans, IBM plex mono-->
+		<link rel = "preconnect" href = "https://fonts.googleapis.com" />
+		<link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin />
+		<link href = "https://fonts.googleapis.com/css2?family=Spectral:wght@400;500;600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel = "stylesheet" />
+	</head>
+
+	<body>
+		<!--app shell-->
+		<div class = "app-shell">
+			<!--sidebar-->
+			<aside class = "sidebar">
+				<!--brand-->
+				<div class = "sidebar-brand">
+				  	<img 	src = "images/logo-clear.png" 
+				  			alt = "Coat of arms of the Republic of South Sudan" 
+				  			class = "brand-mark" />
+				  	<div class = "sidebar-brand-text">
+				    	<span class = "brand-org"> NS </span>
+				    	<span class = "brand-system"> Payroll System </span>
+				  	</div>
+				</div>
+				<!--brand end-->
+
+				<!--nav-->
+				<nav class = "sidebar-nav" aria-label = "Primary">
+					<p class = "nav-label"> Overview </p>
+					<a href = "index.html" class = "nav-item">
+						<span class = "nav-dot" aria-hidden = "true"></span> Dashboard
+					</a>
+
+					<p class = "nav-label"> Personnel </p>
+					<a href = "employees.html" class = "nav-item"> Employees </a>
+					<a href = "departments.html" class = "nav-item"> Departments </a>
+
+					<p class = "nav-label"> Payroll </p>
+					<a href = "payroll-run.html" class = "nav-item"> Run Payroll </a>
+					<a href = "pay-structure.html" class = "nav-item is-active"> Pay Structure </a>
+					<a href = "payroll-history.html" class = "nav-item"> Payroll History </a>
+
+					<p class = "nav-label"> System </p>
+					<a href = "reports.html" class = "nav-item"> Reports </a>
+					<a href = "users-and-roles.html" class = "nav-item"> Users &amp; Roles </a>
+					<a href = "settings.html" class = "nav-item"> Settings </a>
+				</nav>
+				<!--nav end-->
+
+				<!--sidebar footer-->
+				<div class = "sidebar-footer">
+					<div class = "sidebar-user">
+						<div class = "avatar"> JD </div>
+						<div class = "sidebar-user-text">
+							<span class = "user-name"> John Doe </span>
+							<span class = "user-role"> HR Administrator </span>
+						</div>
+					</div>
+
+					<a href = "login.html" class = "sign-out"> Sign out </a>
+				</div>
+				<!--sidebar footer end-->
+			</aside>
+			<!--sidebar end-->
+
+			<!--main-->
+			<div class = "main">
+				<header class = "topbar">
+					<div>
+        				<p class = "topbar-eyebrow"> Payroll </p>
+        				<h1> Pay Structure </h1>
+      				</div>
+
+      				<div class = "topbar-actions">
+        				<button type = "button" class = "btn-primary" id = "openAddGrade"> + Add grade </button>
+      				</div>
+				</header>
+
+				<main class = "content">
+					<!--salary grades-->
+					<div class="panel">
+						<div class = "panel-head">
+          					<h2> Salary grades </h2>
+          					<a href = "#" class = "panel-link"> Export </a>
+        				</div>
+
+        				<table class = "data-table">
+        					<thead>
+        						<tr>
+              						<th> Grade </th>
+              						<th> Typical rank </th>
+              						<th> Basic salary </th>
+              						<th> Housing </th>
+              						<th> Risk </th>
+              						<th> Transport </th>
+              						<th> Total (gross) </th>
+              						<th></th>
+            					</tr>
+        					</thead>
+
+        					<tbody>
+        						<tr>
+              						<td class = "mono"> Grade 9 </td>
+              						<td> Director </td>
+              						<td class = "mono"> SSP 380,000 </td>
+              						<td class = "mono"> SSP 70,000 </td>
+              						<td class = "mono"> SSP 40,000 </td>
+              						<td class = "mono"> SSP 20,000 </td>
+              						<td class = "mono"> SSP 510,000 </td>
+              						<td class = "row-actions"> <a href = "#"> Edit </a> </td>
+            					</tr>
+
+            					<tr>
+              						<td class = "mono"> Grade 8 </td>
+              						<td> Deputy Director </td>
+              						<td class = "mono"> SSP 310,000 </td>
+              						<td class = "mono"> SSP 55,000 </td>
+              						<td class = "mono"> SSP 35,000 </td>
+              						<td class = "mono"> SSP 18,000 </td>
+              						<td class = "mono"> SSP 418,000 </td>
+              						<td class = "row-actions"> <a href = "#"> Edit </a> </td>
+            					</tr>
+
+            					<tr>
+				              		<td class = "mono"> Grade 7 </td>
+				              		<td> Senior Officer </td>
+				              		<td class = "mono"> SSP 220,000 </td>
+				              		<td class = "mono"> SSP 40,000 </td>
+				              		<td class = "mono"> SSP 25,000 </td>
+              						<td class = "mono"> SSP 15,000 </td>
+              						<td class = "mono"> SSP 300,000 </td>
+              						<td class = "row-actions"> <a href = "#"> Edit </a> </td>
+            					</tr>
+
+            					<tr>
+				              		<td class = "mono"> Grade 6 </td>
+				              		<td> Officer </td>
+				              		<td class = "mono"> SSP 175,000 </td>
+				              		<td class = "mono"> SSP 32,000 </td>
+				              		<td class = "mono"> SSP 18,000 </td>
+				              		<td class = "mono"> SSP 12,000 </td>
+				              		<td class = "mono"> SSP 237,000 </td>
+				              		<td class = "row-actions"> <a href = "#"> Edit </a> </td>
+            					</tr>
+
+            					<tr>
+					              	<td class = "mono"> Grade 5 </td>
+					              	<td> Junior Officer </td>
+					              	<td class = "mono"> SSP 140,000 </td>
+					              	<td class = "mono"> SSP 25,000 </td>
+					              	<td class = "mono"> SSP 12,000 </td>
+					              	<td class = "mono"> SSP 10,000 </td>
+					              	<td class = "mono"> SSP 187,000 </td>
+					              	<td class = "row-actions"> <a href = "#"> Edit </a> </td>
+            					</tr>
+
+            					<tr>
+					              	<td class = "mono"> Grade 4 </td>
+					              	<td> Support Staff </td>
+					              	<td class = "mono"> SSP 95,000 </td>
+					              	<td class = "mono"> SSP 18,000 </td>
+					              	<td class = "mono"> — </td>
+					              	<td class = "mono"> SSP 8,000 </td>
+					              	<td class = "mono"> SSP 121,000 </td>
+					              	<td class = "row-actions"> <a href = "#"> Edit </a> </td>
+            					</tr>
+        					</tbody>
+        				</table>
+					</div>
+					<!--salary grades end-->
+
+					<!--statutory deductions-->
+					<div class = "panel">
+						<div class = "panel-head">
+          					<h2> Statutory deductions </h2>
+        				</div>
+
+        				<table class = "data-table">
+        					<thead>
+            					<tr>
+              						<th> Deduction </th>
+              						<th> Basis </th>
+              						<th> Rate </th>
+              						<th></th>
+            					</tr>
+          					</thead>
+
+          					<tbody>
+            					<tr>
+              						<td>PAYE Income Tax</td>
+              						<td>Gross pay, progressive bands</td>
+              						<td class="mono">5% – 15%</td>
+              						<td class="row-actions"><a href="#">Edit</a></td>
+            					</tr>
+
+            					<tr>
+              						<td>NSSF Pension Contribution</td>
+              						<td>Basic salary</td>
+              						<td class="mono">4%</td>
+              						<td class="row-actions"><a href="#">Edit</a></td>
+            					</tr>
+          					</tbody>
+        				</table>
+					</div>
+					<!--statutory deductions end-->
+				</main>
+			</div>
+			<!--main end-->
+		</div>
+		<!--app shell end-->
+
+		<!--sign out modal-->
+		<div id = "signOutModal" class = "modal-overlay" role = "dialog" aria-modal = "true" aria-labelledby = "signOutTitle" hidden>
+		  	<div class = "modal-card">
+		    	<h2 id = "signOutTitle"> Sign out? </h2>
+		    	<p> You'll need to sign in again with your staff ID and password to access the payroll system. </p>
+		    	<div class = "modal-actions">
+		      		<button type = "button" class = "btn-ghost" id = "cancelSignOut"> Cancel </button>
+		      		<button type = "button" class = "btn-primary" id = "confirmSignOut"> Sign out </button>
+		    	</div>
+		  	</div>
+		</div>
+
+		<!--add grade modal-->
+		<div id = "addGradeModal" class = "modal-overlay" role = "dialog" aria-modal = "true" aria-labelledby = "addGradeTitle" hidden>
+  			<div class = "modal-card modal-card-wide">
+    			<h2 id = "addGradeTitle"> Add salary grade </h2>
+
+    			<div class = "form-grid">
+      				<div class = "field">
+        				<label for = "gradeName"> Grade </label>
+        				<input type = "text" id = "gradeName" placeholder = "e.g. Grade 10" />
+      				</div>
+
+      				<div class = "field">
+        				<label for = "gradeRank"> Typical rank </label>
+        				<input type = "text" id = "gradeRank" placeholder = "e.g. Director-General" />
+      				</div>
+
+			      	<div class = "field">
+			        	<label for = "gradeBasic"> Basic salary </label>
+			        	<input type = "text" id = "gradeBasic" class = "mono" placeholder = "SSP" />
+			      	</div>
+
+      				<div class = "field">
+        				<label for = "gradeHousing"> Housing allowance </label>
+        				<input type = "text" id = "gradeHousing" class = "mono" placeholder = "SSP" />
+      				</div>
+
+      				<div class = "field">
+        				<label for = "gradeRisk"> Risk allowance </label>
+        				<input type = "text" id = "gradeRisk" class = "mono" placeholder = "SSP" />
+      				</div>
+
+      				<div class = "field">
+        				<label for = "gradeTransport"> Transport allowance </label>
+        				<input type = "text" id = "gradeTransport" class = "mono" placeholder = "SSP" />
+      				</div>
+    			</div>
+
+    			<div class = "modal-actions">
+      				<button type = "button" class = "btn-ghost" id = "cancelAddGrade"> Cancel </button>
+      				<button type = "button" class = "btn-primary" id = "saveAddGrade"> Save grade </button>
+    			</div>
+  			</div>
+		</div>
+
+		<!--js link-->
+		<script src = "js/script.js"></script>
+	</body>
+</html>

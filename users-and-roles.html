@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<title> NS Payroll & Personnel System </title>
+
+		<!--browser icon-->
+		<link 	rel = "icon"
+				href = "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💵</text></svg>" />
+
+		<meta charset = "UTF-8" />
+		<meta name = "viewport" content = "width=device-width, initial-scale=1.0" />
+		<meta name = "author" content = "Rebecca Chan" /> <!--date of creation; Mon, July 20, 2026-->
+
+		<!--custom CSS-->
+		<link rel = "stylesheet" href = "css/style.css" />
+
+		<!--font awesome link-->
+		<link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" />
+
+		<!--google fonts: spectral, public sans, IBM plex mono-->
+		<link rel = "preconnect" href = "https://fonts.googleapis.com" />
+		<link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin />
+		<link href = "https://fonts.googleapis.com/css2?family=Spectral:wght@400;500;600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel = "stylesheet" />
+	</head>
+
+	<body>
+		<!--app shell-->
+		<div class = "app-shell">
+			<!--sidebar-->
+			<aside class = "sidebar">
+				<!--brand-->
+				<div class = "sidebar-brand">
+				  	<img 	src = "images/logo-clear.png" 
+				  			alt = "Coat of arms of the Republic of South Sudan" 
+				  			class = "brand-mark" />
+				  	<div class = "sidebar-brand-text">
+				    	<span class = "brand-org"> NS </span>
+				    	<span class = "brand-system"> Payroll System </span>
+				  	</div>
+				</div>
+				<!--brand end-->
+
+				<!--nav-->
+				<nav class = "sidebar-nav" aria-label = "Primary">
+					<p class = "nav-label"> Overview </p>
+					<a href = "index.html" class = "nav-item">
+						<span class = "nav-dot" aria-hidden = "true"></span> Dashboard
+					</a>
+
+					<p class = "nav-label"> Personnel </p>
+					<a href = "employees.html" class = "nav-item"> Employees </a>
+					<a href = "departments.html" class = "nav-item"> Departments </a>
+
+					<p class = "nav-label"> Payroll </p>
+					<a href = "payroll-run.html" class = "nav-item"> Run Payroll </a>
+					<a href = "pay-structure.html" class = "nav-item"> Pay Structure </a>
+					<a href = "payroll-history.html" class = "nav-item"> Payroll History </a>
+
+					<p class = "nav-label"> System </p>
+					<a href = "reports.html" class = "nav-item"> Reports </a>
+					<a href = "users-and-roles.html" class = "nav-item is-active"> Users &amp; Roles </a>
+					<a href = "settings.html" class = "nav-item"> Settings </a>
+				</nav>
+				<!--nav end-->
+
+				<!--sidebar footer-->
+				<div class = "sidebar-footer">
+					<div class = "sidebar-user">
+						<div class = "avatar"> JD </div>
+						<div class = "sidebar-user-text">
+							<span class = "user-name"> John Doe </span>
+							<span class = "user-role"> HR Administrator </span>
+						</div>
+					</div>
+
+					<a href = "login.html" class = "sign-out"> Sign out </a>
+				</div>
+				<!--sidebar footer end-->
+			</aside>
+			<!--sidebar end-->
+
+			<!--main-->
+			<div class = "main">
+				<header class = "topbar">
+      				<div>
+        				<p class = "topbar-eyebrow"> System </p>
+        				<h1> Users &amp; Roles </h1>
+      				</div>
+
+      				<div class = "topbar-actions">
+        				<button type = "button" class = "btn-primary" id = "openInviteUser"> + Invite user </button>
+      				</div>
+    			</header>
+
+    			<main class = "content">
+    				<!--system users-->
+    				<div class = "panel">
+    					<div class = "panel-head">
+          					<h2> System users </h2>
+        				</div>
+
+        				<table class = "data-table">
+        					<thead>
+					            <tr>
+					              	<th> Name </th>
+					              	<th> Email </th>
+					              	<th> Role </th>
+					              	<th> Last active </th>
+					              	<th> Status </th>
+					              	<th></th>
+					            </tr>
+					        </thead>
+
+					        <tbody>
+					        	<tr>
+					              	<td> Michael Chan </td>
+					              	<td class = "mono"> m.chan@nsb.gov.ss </td>
+					              	<td> HR Administrator </td>
+					              	<td> Today, 09:12 </td>
+					              	<td> <span class = "status status-green"> Active </span> </td>
+					              	<td class = "row-actions"> <a href = "#"> Edit </a> </td>
+					            </tr>
+
+					            <tr>
+					              	<td> Grace Adut Deng </td>
+					              	<td class = "mono"> g.deng@nsb.gov.ss </td>
+					              	<td> System Administrator </td>
+					              	<td> Today, 08:47 </td>
+					              	<td> <span class = "status status-green"> Active </span> </td>
+					              	<td class = "row-actions"> <a href = "#"> Edit </a> </td>
+					            </tr>
+
+					            <tr>
+					              	<td> Peter Lomude Ochan </td>
+					              	<td class = "mono"> p.ochan@nsb.gov.ss </td>
+					              	<td> Finance Officer </td>
+					              	<td> Yesterday, 16:30 </td>
+					              	<td> <span class = "status status-green"> Active </span> </td>
+					              	<td class = "row-actions"> <a href = "#"> Edit </a> </td>
+					            </tr>
+
+					            <tr>
+					              	<td> Nyibol Garang Kuot </td>
+					              	<td class = "mono"> n.kuot@nsb.gov.ss </td>
+					              	<td> Approver </td>
+					              	<td> 3 days ago </td>
+					              	<td> <span class = "status status-amber"> Invited </span> </td>
+					              	<td class = "row-actions"> <a href = "#"> Edit </a> </td>
+					            </tr>
+
+					            <tr>
+					              	<td> James Wani Lado </td>
+					              	<td class = "mono"> j.lado@nsb.gov.ss </td>
+					              	<td> Read-only Viewer </td>
+					              	<td> 2 weeks ago </td>
+					              	<td> <span class = "status status-slate"> Disabled </span> </td>
+					              	<td class = "row-actions"> <a href = "#"> Edit </a> </td>
+					            </tr>
+					        </tbody>
+        				</table>
+    				</div>
+    				<!--system users end-->
+
+    				<!--roles and permissions-->
+    				<div class = "panel">
+    					<div class = "panel-head">
+          					<h2> Roles &amp; permissions </h2>
+        				</div>
+
+        				<table class = "data-table">
+        					<thead>
+					            <tr>
+					              	<th> Role </th>
+					              	<th> Personnel </th>
+					              	<th> Run payroll </th>
+					              	<th> Approve payroll </th>
+					              	<th> Reports </th>
+					              	<th> User management </th>
+					            </tr>
+					        </thead>
+
+					        <tbody>
+					        	<tr>
+					              	<td> HR Administrator </td>
+					              	<td> <span class = "perm-yes"> ✓ </span> </td>
+					              	<td> <span class = "perm-yes"> ✓ </span> </td>
+					              	<td> <span class = "perm-no"> — </span> </td>
+					              	<td> <span class = "perm-yes"> ✓ </span> </td>
+					              	<td> <span class = "perm-no"> — </span> </td>
+					            </tr>
+
+					            <tr>
+					              	<td> System Administrator </td>
+					              	<td> <span class = "perm-yes"> ✓ </span> </td>
+					              	<td> <span class = "perm-yes"> ✓ </span> </td>
+					              	<td> <span class = "perm-yes"> ✓ </span> </td>
+					              	<td> <span class = "perm-yes"> ✓ </span> </td>
+					              	<td> <span class = "perm-yes"> ✓ </span> </td>
+					            </tr>
+
+					            <tr>
+					              	<td> Finance Officer </td>
+					              	<td> <span class = "perm-no"> — </span> </td>
+					              	<td> <span class = "perm-yes"> ✓ </span> </td>
+					              	<td> <span class = "perm-no"> — </span> </td>
+					              	<td> <span class = "perm-yes"> ✓ </span> </td>
+					              	<td> <span class = "perm-no"> — </span> </td>
+					            </tr>
+
+					            <tr>
+					              	<td> Approver </td>
+					              	<td> <span class = "perm-no"> — </span> </td>
+					              	<td> <span class = "perm-no"> — </span> </td>
+					              	<td> <span class = "perm-yes"> ✓ </span> </td>
+					              	<td> <span class = "perm-yes"> ✓ </span> </td>
+					              	<td> <span class = "perm-no"> — </span> </td>
+					            </tr>
+
+					            <tr>
+					              	<td> Read-only Viewer </td>
+					              	<td> <span class = "perm-no"> — </span> </td>
+					              	<td> <span class = "perm-no"> — </span> </td>
+					              	<td> <span class = "perm-no"> — </span> </td>
+					              	<td> <span class = "perm-yes"> ✓ </span> </td>
+					              	<td> <span class = "perm-no"> — </span> </td>
+					            </tr>
+					        </tbody>
+        				</table>
+    				</div>
+    				<!--roles and permissions end-->
+    			</main>
+			</div>
+			<!--main end-->
+		</div>
+		<!--app shell end-->
+
+		<!--invite user modal-->
+		<div 	id = "inviteUserModal" 
+				class = "modal-overlay" 
+				role = "dialog" 
+				aria-modal = "true" 
+				aria-labelledby = "inviteUserTitle" hidden>
+
+  			<div class = "modal-card">
+    			<h2 id = "inviteUserTitle"> Invite a user </h2>
+    			<div class = "field">
+      				<label for = "inviteEmail"> Email address </label>
+      				<input type = "text" id = "inviteEmail" placeholder = "name@nsb.gov.ss" />
+    			</div>
+
+    			<div class = "field">
+      				<label for = "inviteRole"> Role </label>
+      				<select id = "inviteRole">
+        				<option> HR Administrator </option>
+        				<option> System Administrator </option>
+        				<option> Finance Officer </option>
+        				<option> Approver </option>
+        				<option> Read-only Viewer </option>
+      				</select>
+    			</div>
+
+    			<div class = "modal-actions">
+      				<button type = "button" class = "btn-ghost" id = "cancelInviteUser"> Cancel </button>
+      				<button type = "button" class = "btn-primary" id = "sendInviteUser"> Send invite </button>
+    			</div>
+  			</div>
+		</div>
+
+		<!--sign out modal-->
+		<div id = "signOutModal" class = "modal-overlay" role = "dialog" aria-modal = "true" aria-labelledby = "signOutTitle" hidden>
+		  	<div class = "modal-card">
+		    	<h2 id = "signOutTitle"> Sign out? </h2>
+		    	<p> You'll need to sign in again with your staff ID and password to access the payroll system. </p>
+		    	<div class = "modal-actions">
+		      		<button type = "button" class = "btn-ghost" id = "cancelSignOut"> Cancel </button>
+		      		<button type = "button" class = "btn-primary" id = "confirmSignOut"> Sign out </button>
+		    	</div>
+		  	</div>
+		</div>
+
+		<!--js link-->
+		<script src = "js/script.js"></script>
+	</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<title> NS Payroll & Personnel System </title>
+
+		<!--browser icon-->
+		<link 	rel = "icon"
+				href = "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💵</text></svg>" />
+
+		<meta charset = "UTF-8" />
+		<meta name = "viewport" content = "width=device-width, initial-scale=1.0" />
+		<meta name = "author" content = "Rebecca Chan" /> <!--date of creation; Mon, July 20, 2026-->
+
+		<!--custom CSS-->
+		<link rel = "stylesheet" href = "css/style.css" />
+
+		<!--font awesome link-->
+		<link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" />
+
+		<!--google fonts: spectral, public sans, IBM plex mono-->
+		<link rel = "preconnect" href = "https://fonts.googleapis.com" />
+		<link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin />
+		<link href = "https://fonts.googleapis.com/css2?family=Spectral:wght@400;500;600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel = "stylesheet" />
+	</head>
+
+	<body>
+		<!--app shell-->
+		<div class = "app-shell">
+			<!--sidebar-->
+			<aside class = "sidebar">
+				<!--brand-->
+				<div class = "sidebar-brand">
+				  	<img 	src = "images/logo-clear.png" 
+				  			alt = "Coat of arms of the Republic of South Sudan" 
+				  			class = "brand-mark" />
+				  	<div class = "sidebar-brand-text">
+				    	<span class = "brand-org"> NS </span>
+				    	<span class = "brand-system"> Payroll System </span>
+				  	</div>
+				</div>
+				<!--brand end-->
+
+				<!--nav-->
+				<nav class = "sidebar-nav" aria-label = "Primary">
+					<p class = "nav-label"> Overview </p>
+					<a href = "index.html" class = "nav-item">
+						<span class = "nav-dot" aria-hidden = "true"></span> Dashboard
+					</a>
+
+					<p class = "nav-label"> Personnel </p>
+					<a href = "employees.html" class = "nav-item"> Employees </a>
+					<a href = "departments.html" class = "nav-item"> Departments </a>
+
+					<p class = "nav-label"> Payroll </p>
+					<a href = "payroll-run.html" class = "nav-item is-active"> Run Payroll </a>
+					<a href = "pay-structure.html" class = "nav-item"> Pay Structure </a>
+					<a href = "payroll-history.html" class = "nav-item"> Payroll History </a>
+
+					<p class = "nav-label"> System </p>
+					<a href = "reports.html" class = "nav-item"> Reports </a>
+					<a href = "users-and-roles.html" class = "nav-item"> Users &amp; Roles </a>
+					<a href = "settings.html" class = "nav-item"> Settings </a>
+				</nav>
+				<!--nav end-->
+
+				<!--sidebar footer-->
+				<div class = "sidebar-footer">
+					<div class = "sidebar-user">
+						<div class = "avatar"> JD </div>
+						<div class = "sidebar-user-text">
+							<span class = "user-name"> John Doe </span>
+							<span class = "user-role"> HR Administrator </span>
+						</div>
+					</div>
+
+					<a href = "login.html" class = "sign-out"> Sign out </a>
+				</div>
+				<!--sidebar footer end-->
+			</aside>
+			<!--sidebar end-->
+
+			<!--main-->
+			<div class = "main">
+				<header class = "topbar">
+					<div>
+						<p class = "topbar-eyebrow"> Payroll </p>
+        				<h1> Run Payroll </h1>
+					</div>
+				</header>
+
+				<main class = "content">
+					<!--step indicator-->
+					<ol class = "stepper" aria-label = "Payroll run progress">
+						<li class = "stepper-step is-active">
+          					<span class = "stepper-num"> 1 </span>
+          					<span> Select period </span>
+        				</li>
+
+        				<li class = "stepper-step">
+          					<span class = "stepper-num"> 2 </span>
+          					<span> Review </span>
+        				</li>
+
+        				<li class = "stepper-step">
+          					<span class = "stepper-num"> 3 </span>
+          					<span> Confirm &amp; generate </span>
+        				</li>
+					</ol>
+
+					<!--period selection-->
+					<div class = "panel">
+						<div class = "panel-head">
+          					<h2> Pay period </h2>
+        				</div>
+
+        				<div class = "period-form">
+        					<div class = "field">
+            					<label for = "payMonth"> Month </label>
+            					<select id = "payMonth">
+              						<option> July 2026 </option>
+              						<option> June 2026 </option>
+              						<option> May 2026 </option>
+            					</select>
+          					</div>
+
+          					<div class = "field">
+            					<label for = "payDate"> Pay date </label>
+            					<input type = "text" id = "payDate" value = "31 Jul 2026" class = "mono" />
+          					</div>
+
+          					<div class = "field">
+				            	<label for = "payScope"> Scope </label>
+				            	<select id = "payScope">
+				              		<option> All departments </option>
+				              		<option> Intelligence Ops </option>
+				              		<option> Finance &amp; Admin </option>
+				              		<option> Logistics </option>
+				              		<option> Human Resources </option>
+				            	</select>
+				          	</div>
+        				</div>
+					</div>
+
+					<!--summary cards-->
+					<section class = "cards cards-run" aria-label = "Payroll run summary">
+						<article class = "card">
+          					<p class = "card-label"> Employees included </p>
+          					<p class = "card-value"> 1,284 </p>
+          					<p class = "card-meta"> All statuses: Active </p>
+        				</article>
+
+        				<article class = "card">
+          					<p class = "card-label"> Total gross pay </p>
+          					<p class = "card-value mono"> SSP 421.9M </p>
+        				</article>
+
+        				<article class = "card">
+          					<p class = "card-label"> Total deductions </p>
+          					<p class = "card-value mono"> SSP 9.3M </p>
+        				</article>
+
+        				<article class = "card">
+          					<p class = "card-label"> Total net pay </p>
+          					<p class = "card-value mono net-pay"> SSP 412.6M </p>
+        				</article>
+					</section>
+
+					<!--preview table-->
+					<div class = "panel">
+						<div class = "panel-head">
+          					<h2> Preview </h2>
+          					<a href = "#" class = "panel-link"> View full list </a>
+        				</div>
+
+        				<table class = "data-table">
+        					<thead>
+            					<tr>
+              						<th> Staff ID </th>
+              						<th> Name </th>
+              						<th> Department </th>
+              						<th> Gross pay </th>
+              						<th> Deductions </th>
+              						<th> Net pay </th>
+            					</tr>
+          					</thead>
+
+          					<tbody>
+          						<tr>
+              						<td class = "mono"> NSB-04213 </td>
+              						<td> Akol Deng Majok </td>
+              						<td> Intelligence Ops </td>
+              						<td class = "mono"> SSP 285,000 </td>
+              						<td class = "mono"> − SSP 18,500 </td>
+              						<td class = "mono"> SSP 266,500 </td>
+            					</tr>
+
+            					<tr>
+              						<td class = "mono"> NSB-03987 </td>
+              						<td> Nyibol Garang Kuot </td>
+              						<td> Finance &amp; Admin </td>
+              						<td class = "mono"> SSP 190,000 </td>
+              						<td class = "mono"> − SSP 12,100 </td>
+              						<td class = "mono"> SSP 177,900 </td>
+            					</tr>
+
+            					<tr>
+              						<td class = "mono"> NSB-02761 </td>
+              						<td> James Wani Lado </td>
+              						<td> Logistics </td>
+              						<td class = "mono"> SSP 165,000 </td>
+              						<td class = "mono"> − SSP 10,400 </td>
+              						<td class = "mono"> SSP 154,600 </td>
+            					</tr>
+
+            					<tr>
+              						<td class = "mono"> NSB-01455 </td>
+              						<td> Rebecca Achol Malual </td>
+              						<td> Human Resources </td>
+              						<td class = "mono"> SSP 175,000 </td>
+              						<td class = "mono"> − SSP 11,200 </td>
+              						<td class = "mono"> SSP 163,800 </td>
+            					</tr>
+          					</tbody>
+        				</table>
+
+        				<!--pagination-->
+        				<div class = "pagination">
+          					<p> Showing 4 of 1,284 — full breakdown available after generation </p>
+        				</div>
+					</div>
+					<!--preview table end-->
+
+					<!--action bar-->
+					<div class = "run-actions">
+        				<button type = "button" class = "btn-ghost"> Save as draft </button>
+        				<button type = "button" class = "btn-primary" id = "openConfirmRun"> Generate payroll </button>
+      				</div>
+				</main>
+			</div>
+			<!--main end-->
+		</div>
+		<!--app shell end-->
+
+		<!--sign out modal-->
+		<div id = "signOutModal" class = "modal-overlay" role = "dialog" aria-modal = "true" aria-labelledby = "signOutTitle" hidden>
+		  	<div class = "modal-card">
+		    	<h2 id = "signOutTitle"> Sign out? </h2>
+		    	<p> You'll need to sign in again with your staff ID and password to access the payroll system. </p>
+		    	<div class = "modal-actions">
+		      		<button type = "button" class = "btn-ghost" id = "cancelSignOut"> Cancel </button>
+		      		<button type = "button" class = "btn-primary" id = "confirmSignOut"> Sign out </button>
+		    	</div>
+		  	</div>
+		</div>
+
+		<!--confirm modal-->
+		<div id = "confirmRunModal" class = "modal-overlay" role = "dialog" aria-modal = "true" aria-labelledby = "confirmRunTitle" hidden>
+  			<div class = "modal-card">
+    			<h2 id = "confirmRunTitle"> Generate payroll for July 2026? </h2>
+    			<p> 
+    				This will calculate final pay for 1,284 employees across all departments, totaling SSP 412.6M net. This action creates payment records and cannot be undone from this screen.
+    			</p>
+    			<div class = "modal-actions">
+      				<button type = "button" class = "btn-ghost" id = "cancelConfirmRun"> Cancel </button>
+      				<button type = "button" class = "btn-primary" id = "proceedConfirmRun"> Generate payroll </button>
+    			</div>
+  			</div>
+		</div>
+
+		<!--js link-->
+		<script src = "js/script.js"></script>
+	</body>
+</html>
